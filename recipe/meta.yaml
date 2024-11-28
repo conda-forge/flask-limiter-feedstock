@@ -1,30 +1,31 @@
 {% set name = "flask-limiter" %}
-{% set version = "3.8.0" %}
+{% set version = "3.9.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 686f8b4a75404e47b91565a795c70d29f69c145f6907f1f32522e962b134dada
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: b110049cf7f7b1c5e24f01c3c76e34357303ee64d27a9b32e88e84ea8a0fc97b
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }} 
     - pip
+    - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }} 
     - limits >=3.13
     - flask >=2
     - ordered-set >4,<5
     - rich >=12,<14
-    - typing-extensions >=4
+    - typing_extensions >=4
 
 test:
   imports:
@@ -32,6 +33,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
