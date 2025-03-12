@@ -1,5 +1,5 @@
 {% set name = "flask-limiter" %}
-{% set version = "3.10.1" %}
+{% set version = "3.11.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 5ff8395f2acbc565ba6af43dc4b9c5b0a3665989681791d01dfaa6388bb332c6
+  sha256: 57b037fb8be423ef7ebac4fbb279fbfdc42d9aa5378467ab6798d6ce3d912117
 
 build:
   noarch: python
