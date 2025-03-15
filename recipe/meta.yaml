@@ -1,12 +1,13 @@
 {% set name = "flask-limiter" %}
 {% set version = "3.12" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/flask_limiter-{{ version }}.tar.gz
   sha256: f9e3e3d0c4acd0d1ffbfa729e17198dd1042f4d23c130ae160044fc930e21300
 
 build:
@@ -25,7 +26,6 @@ requirements:
     - flask >=2
     - ordered-set >4,<5
     - rich >=12,<14
-    - typing_extensions >=4
 
 test:
   imports:
