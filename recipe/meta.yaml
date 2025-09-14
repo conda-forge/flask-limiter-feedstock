@@ -1,6 +1,5 @@
 {% set name = "flask-limiter" %}
 {% set version = "3.13" %}
-{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
