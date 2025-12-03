@@ -25,7 +25,6 @@ requirements:
     - limits >=3.13
     - flask >=2
     - ordered-set >4,<5
-    - rich >=12,<15
     - typing_extensions >=4.3
 
 test:
